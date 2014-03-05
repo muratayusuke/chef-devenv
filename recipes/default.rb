@@ -33,3 +33,33 @@ end
      action :install
   end
 end
+
+template "/etc/X11/xorg.conf" do
+  source "xorg.conf.erb"
+  owner "root"
+  group "root"
+  mode 00644
+end
+
+bash "set hostname" do
+  user "root"
+  cwd "/etc"
+  code <<-EOC
+    echo #{node['devenv']['hostname']} > hostname
+  EOC
+end
+
+service "ntp" do
+  service_name "ntp"
+  restart_command "/etc/init.d/ntp restart"
+  supports [:restart]
+  action :enable
+end
+
+template "/etc/ntp.conf" do
+  source "ntp.conf.erb"
+  owner "root"
+  group "root"
+  mode 00644
+  notifies :restart, "service[ntp]"
+end
