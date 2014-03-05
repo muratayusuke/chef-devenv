@@ -28,7 +28,7 @@ end
   qtquick1-5-dev qtlocation5-dev qtsensors5-dev qtdeclarative5-dev
   libgio2.0-cil-dev rpm2cpio libsqlite3-dev libgstreamer1.0-dev libgstreamer0.10-dev
   libgstreamer-plugins-base1.0-dev libgstreamer-plugins-base0.10-dev meld
-  irb silversearcher-ag}.each do |pkg|
+  irb silversearcher-ag jq}.each do |pkg|
   package pkg do
      action :install
   end
