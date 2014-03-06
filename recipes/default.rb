@@ -1,7 +1,3 @@
-%w{docker git global tmux ncftp tig updatedb}.each do |cookbook|
-  include_recipe cookbook
-end
-
 bash "setup apt" do
   user "root"
   group "root"
@@ -13,6 +9,10 @@ bash "setup apt" do
     apt-add-repository ppa:mizuno-as/silversearcher-ag
     apt-get update
   EOC
+end
+
+%w{docker git global tmux ncftp tig updatedb}.each do |cookbook|
+  include_recipe cookbook
 end
 
 %w{lubuntu-desktop zsh autotools-dev automake libtool
@@ -62,4 +62,33 @@ template "/etc/ntp.conf" do
   group "root"
   mode 00644
   notifies :restart, "service[ntp]"
+end
+
+# make user
+user node['dev_user']['id'] do
+  home "/home/#{node['dev_user']['id']}"
+  shell node['dev_user']['shell']
+  password node['dev_user']['password']
+end
+
+bash "add groups" do
+  user "root"
+  cwd "/usr/local/src"
+  code <<-EOC
+    gpasswd -a #{node['dev_user']['id']} sudo
+    gpasswd -a #{node['dev_user']['id']} vboxsf
+  EOC
+end
+
+bash "install rbenv" do
+  user node['dev_user']['id']
+  cwd "/home/#{node['dev_user']['id']}"
+  cmd = <<-EOC
+    git clone https://github.com/sstephenson/rbenv.git /home/#{node['dev_user']['id']}/.rbenv
+    mkdir /home/#{node['dev_user']['id']}/.rbenv/plugins
+    git clone https://github.com/sstephenson/ruby-build.git /home/#{node['dev_user']['id']}/.rbenv/plugins/ruby-build
+    export PATH="/home/#{node['dev_user']['id']}/.rbenv/bin:$PATH"
+  EOC
+  code cmd
+  creates File.join("/", "home", node['dev_user']['id'], ".rbenv")
 end
