@@ -11,7 +11,9 @@ bash "setup apt" do
   EOC
 end
 
-%w{docker git global tmux ncftp tig updatedb}.each do |cookbook|
+include_recipe "git::source"
+
+%w{docker global tmux ncftp tig updatedb}.each do |cookbook|
   include_recipe cookbook
 end
 
