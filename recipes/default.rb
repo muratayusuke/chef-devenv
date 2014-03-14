@@ -10,12 +10,6 @@ bash "setup apt" do
   EOC
 end
 
-include_recipe "git::source"
-
-%w{docker global tmux ncftp tig updatedb the_silver_searcher}.each do |cookbook|
-  include_recipe cookbook
-end
-
 %w{lubuntu-desktop zsh autotools-dev automake libtool
   libevent-dev zlib1g-dev libbz2-dev libyaml-dev
   libxml2-dev libxslt1-dev libreadline-dev xsel patch libmysqlclient-dev
@@ -33,6 +27,12 @@ end
   package pkg do
      action :install
   end
+end
+
+include_recipe "git::source"
+
+%w{docker global tmux ncftp tig updatedb the_silver_searcher}.each do |cookbook|
+  include_recipe cookbook
 end
 
 template "/etc/X11/xorg.conf" do
