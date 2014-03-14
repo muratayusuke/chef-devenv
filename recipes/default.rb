@@ -6,14 +6,13 @@ bash "setup apt" do
     apt-get install aptitude
     add-apt-repository ppa:cassou/emacs
     add-apt-repository ppa:chris-lea/node.js
-    apt-add-repository ppa:mizuno-as/silversearcher-ag
     apt-get update
   EOC
 end
 
 include_recipe "git::source"
 
-%w{docker global tmux ncftp tig updatedb}.each do |cookbook|
+%w{docker global tmux ncftp tig updatedb the_silver_searcher}.each do |cookbook|
   include_recipe cookbook
 end
 
@@ -30,7 +29,7 @@ end
   qtquick1-5-dev qtlocation5-dev qtsensors5-dev qtdeclarative5-dev
   libgio2.0-cil-dev rpm2cpio libsqlite3-dev libgstreamer1.0-dev libgstreamer0.10-dev
   libgstreamer-plugins-base1.0-dev libgstreamer-plugins-base0.10-dev meld
-  irb silversearcher-ag jq}.each do |pkg|
+  irb jq}.each do |pkg|
   package pkg do
      action :install
   end
