@@ -13,7 +13,7 @@ end
 %w{lubuntu-desktop zsh autotools-dev automake libtool
   libevent-dev zlib1g-dev libbz2-dev libyaml-dev
   libxml2-dev libxslt1-dev libreadline-dev xsel patch libmysqlclient-dev
-  chromium-browser ibus-mozc mozc-server mozc-utils-gui ibus-el 
+  chromium-browser ibus-mozc mozc-server mozc-utils-gui ibus-el
   emacs24 emacs24-el xfonts-shinonome python-xlib
   libterm-readkey-perl g++ rubygems ant subversion libpcre3-dev  libidn11-dev ssh
   sendmail expect python-software-properties gettext tcl tk
@@ -29,9 +29,7 @@ end
   end
 end
 
-include_recipe "git::source"
-
-%w{docker global tmux ncftp tig updatedb the_silver_searcher}.each do |cookbook|
+%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker}.each do |cookbook|
   include_recipe cookbook
 end
 
