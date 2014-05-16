@@ -76,6 +76,7 @@ bash "add groups" do
   code <<-EOC
     gpasswd -a #{node['dev_user']['id']} sudo
     gpasswd -a #{node['dev_user']['id']} vboxsf
+    gpasswd -a #{node['dev_user']['id']} docker
   EOC
 end
 
