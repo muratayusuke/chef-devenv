@@ -15,7 +15,7 @@ end
   libxml2-dev libxslt1-dev libreadline-dev xclip patch libmysqlclient-dev
   chromium-browser ibus-mozc mozc-server mozc-utils-gui ibus-el
   emacs24 emacs24-el xfonts-shinonome python-xlib
-  libterm-readkey-perl g++ rubygems ant subversion libpcre3-dev  libidn11-dev ssh
+  libterm-readkey-perl g++ ant subversion libpcre3-dev  libidn11-dev ssh
   sendmail expect python-software-properties gettext tcl tk
   libsvn-perl asciidoc libcurl4-gnutls-dev libcurl4-openssl-dev curl
   libexpat-dev zlib1g-dev libbz2-dev python-appindicator redis-server
