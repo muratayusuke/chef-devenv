@@ -70,6 +70,12 @@ user node['dev_user']['id'] do
   password node['dev_user']['password']
 end
 
+directory "/home/#{node['dev_user']['id']}" do
+  owner node['dev_user']['id']
+  group node['dev_user']['id']
+  action :create
+end
+
 bash "add groups" do
   user "root"
   cwd "/usr/local/src"
