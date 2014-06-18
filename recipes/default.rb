@@ -13,7 +13,7 @@ end
 %w{lubuntu-desktop zsh autotools-dev automake libtool
   libevent-dev zlib1g-dev libbz2-dev libyaml-dev
   libxml2-dev libxslt1-dev libreadline-dev xclip patch libmysqlclient-dev
-  chromium-browser ibus-mozc mozc-server mozc-utils-gui ibus-el
+  chromium-browser ibus-mozc mozc-server mozc-utils-gui emacs-mozc emacs-mozc-bin
   emacs24 emacs24-el xfonts-shinonome python-xlib
   libterm-readkey-perl g++ ant subversion libpcre3-dev  libidn11-dev ssh
   sendmail expect python-software-properties gettext tcl tk
