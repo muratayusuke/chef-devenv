@@ -4,7 +4,7 @@ bash "setup apt" do
   cwd "/usr/local/src"
   code <<-EOC
     apt-get install aptitude
-    add-apt-repository ppa:ubuntu-elisp/ppa
+    add-apt-repository ppa:ubuntu-elisp/ppa -y
     add-apt-repository ppa:chris-lea/node.js
     apt-get update
   EOC
