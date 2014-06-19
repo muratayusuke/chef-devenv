@@ -5,7 +5,7 @@ bash "setup apt" do
   code <<-EOC
     apt-get install aptitude
     add-apt-repository ppa:ubuntu-elisp/ppa -y
-    add-apt-repository ppa:chris-lea/node.js
+    add-apt-repository ppa:chris-lea/node.js -y
     apt-get update
   EOC
 end
