@@ -34,12 +34,12 @@ end
   include_recipe cookbook
 end
 
-template "/etc/X11/xorg.conf" do
-  source "xorg.conf.erb"
-  owner "root"
-  group "root"
-  mode 00644
-end
+#template "/etc/X11/xorg.conf" do
+#  source "xorg.conf.erb"
+#  owner "root"
+#  group "root"
+#  mode 00644
+#end
 
 bash "set hostname" do
   user "root"
