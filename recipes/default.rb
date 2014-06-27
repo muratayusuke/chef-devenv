@@ -30,7 +30,8 @@ end
   end
 end
 
-%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker}.each do |cookbook|
+%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker
+  ruby_build rbenv::user}.each do |cookbook|
   include_recipe cookbook
 end
 
@@ -85,17 +86,4 @@ bash "add groups" do
     gpasswd -a #{node['dev_user']['id']} vboxsf
     gpasswd -a #{node['dev_user']['id']} docker
   EOC
-end
-
-bash "install rbenv" do
-  user node['dev_user']['id']
-  cwd "/home/#{node['dev_user']['id']}"
-  cmd = <<-EOC
-    git clone https://github.com/sstephenson/rbenv.git /home/#{node['dev_user']['id']}/.rbenv
-    mkdir /home/#{node['dev_user']['id']}/.rbenv/plugins
-    git clone https://github.com/sstephenson/ruby-build.git /home/#{node['dev_user']['id']}/.rbenv/plugins/ruby-build
-    export PATH="/home/#{node['dev_user']['id']}/.rbenv/bin:$PATH"
-  EOC
-  code cmd
-  creates File.join("/", "home", node['dev_user']['id'], ".rbenv")
 end
