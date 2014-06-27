@@ -16,8 +16,7 @@ default['rbenv']['user_installs'] = [
     'global' => '2.1.2',
     'gems' => {
       '2.1.2' => [
-        { 'name' => 'bundler' },
-        { 'name' => 'rake' }
+        { 'name' => 'bundler' }
       ]
     }
   }
