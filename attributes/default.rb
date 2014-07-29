@@ -21,3 +21,6 @@ default['rbenv']['user_installs'] = [
     }
   }
 ]
+
+# timezone
+default[:tz] = 'Asia/Tokyo'

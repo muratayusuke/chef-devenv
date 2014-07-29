@@ -31,7 +31,7 @@ end
 end
 
 %w{git::source global tmux ncftp tig updatedb the_silver_searcher docker
-  ruby_build rbenv::user hub}.each do |cookbook|
+  ruby_build rbenv::user hub timezone}.each do |cookbook|
   include_recipe cookbook
 end
 
