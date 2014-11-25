@@ -8,6 +8,7 @@ bash "setup apt" do
     add-apt-repository ppa:chris-lea/node.js -y
     dpkg --configure -a
     apt-get update
+    gem install rake
   EOC
 end
 
