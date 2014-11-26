@@ -26,3 +26,6 @@ default['rbenv']['user_installs'] = [
 
 # timezone
 default[:tz] = 'Asia/Tokyo'
+
+# golang for hub
+default['go']['packages'] = ['encoding']
