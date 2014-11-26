@@ -31,11 +31,6 @@ end
   end
 end
 
-%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker
-  ruby_build rbenv::user hub timezone}.each do |cookbook|
-  include_recipe cookbook
-end
-
 #template "/etc/X11/xorg.conf" do
 #  source "xorg.conf.erb"
 #  owner "root"
@@ -87,4 +82,9 @@ bash "add groups" do
     gpasswd -a #{node['dev_user']['id']} vboxsf
     gpasswd -a #{node['dev_user']['id']} docker
   EOC
+end
+
+%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker
+  ruby_build rbenv::user hub timezone}.each do |cookbook|
+  include_recipe cookbook
 end
