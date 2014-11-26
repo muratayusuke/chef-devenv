@@ -22,7 +22,7 @@ end
   libsvn-perl asciidoc libcurl4-gnutls-dev libcurl4-openssl-dev curl
   libexpat-dev zlib1g-dev libbz2-dev python-appindicator redis-server
   nodejs markdown ack-grep ntp qtcreator xvfb qt4-dev-tools libqt5webkit5-dev
-  qtquick1-5-dev qtlocation5-dev qtsensors5-dev qtdeclarative5-dev
+  qtquick1-5-dev qtlocation5-dev libqt5sensors5-dev qtdeclarative5-dev
   libgio2.0-cil-dev rpm2cpio libsqlite3-dev libgstreamer1.0-dev libgstreamer0.10-dev
   libgstreamer-plugins-base1.0-dev libgstreamer-plugins-base0.10-dev meld
   irb jq python-pip pepperflashplugin-nonfree libpq-dev}.each do |pkg|
