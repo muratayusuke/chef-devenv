@@ -74,6 +74,8 @@ directory "/home/#{node['dev_user']['id']}" do
   action :create
 end
 
+include_recipe 'docker'
+
 bash "add groups" do
   user "root"
   cwd "/usr/local/src"
@@ -84,7 +86,7 @@ bash "add groups" do
   EOC
 end
 
-%w{git::source global tmux ncftp tig updatedb the_silver_searcher docker
+%w{git::source global tmux ncftp tig updatedb the_silver_searcher
   ruby_build rbenv::user golang::packages hub timezone}.each do |cookbook|
   include_recipe cookbook
 end
