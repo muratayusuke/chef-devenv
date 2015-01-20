@@ -87,6 +87,6 @@ bash "add groups" do
 end
 
 %w{git::source global tmux ncftp tig updatedb the_silver_searcher
-  ruby_build rbenv::user golang::packages hub timezone}.each do |cookbook|
+  ruby_build rbenv::user golang::packages timezone}.each do |cookbook|
   include_recipe cookbook
 end
