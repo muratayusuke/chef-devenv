@@ -3,13 +3,8 @@ default['dev_user']['id'] = 'devuser'
 default['dev_user']['shell'] = '/bin/zsh'
 default['dev_user']['password'] = '$1$SSk7c5ij$JggO4l1XCuWAKFLMveQoK.' # devuser
 
-default['git']['version'] = '2.0.3'
-default['git']['checksum'] = '40b2c6dbde50dd5d2bf644fe8b6b5082e0e5fea21c407ca5b2a3396ca7d23e05'
-default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v2.0.3'
 default['the_silver_searcher']['version'] = '8cd9dd942d8ebe5c0b0b4593a9d64ae42fb07684'
 default['the_silver_searcher']['url'] = "https://github.com/byplayer/the_silver_searcher/archive/#{node['the_silver_searcher']['version']}.tar.gz"
-default['tmux']['install_method'] = 'source'
-default['tmux']['version'] = '1.9'
 
 # rbenv
 default['rbenv']['user_installs'] = [
