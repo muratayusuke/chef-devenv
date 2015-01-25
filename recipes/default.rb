@@ -97,10 +97,8 @@ bash 'homesick' do
   code <<-EOC
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
-    exec $SHELL -l
     rbenv global 2.1.2
     rbenv rehash
-    exec $SHELL -l
 
     gem install homesick
     rbenv rehash
