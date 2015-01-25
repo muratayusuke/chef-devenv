@@ -93,7 +93,7 @@ end
 
 bash 'homesick' do
   user node['dev_user']['id']
-  cwd '/home/node['dev_user]['id']
+  cwd "/home/#{node['dev_user]['id']}"
   code <<-EOC
     gem install homesick
     rbenv rehash
