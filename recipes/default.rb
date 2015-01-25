@@ -25,7 +25,7 @@ end
   qtquick1-5-dev qtlocation5-dev libqt5sensors5-dev qtdeclarative5-dev
   libgio2.0-cil-dev rpm2cpio libsqlite3-dev libgstreamer1.0-dev libgstreamer0.10-dev
   libgstreamer-plugins-base1.0-dev libgstreamer-plugins-base0.10-dev meld
-  irb jq python-pip pepperflashplugin-nonfree libpq-dev gccgo-go git}.each do |pkg|
+  irb jq python-pip pepperflashplugin-nonfree libpq-dev gccgo-go git libffi-dev}.each do |pkg|
   package pkg do
      action :install
   end
