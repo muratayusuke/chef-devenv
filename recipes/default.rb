@@ -90,3 +90,14 @@ end
   ruby_build rbenv::user golang::packages timezone}.each do |cookbook|
   include_recipe cookbook
 end
+
+bash 'homesick' do
+  user node['dev_user']['id']
+  cwd '/home/node['dev_user]['id']
+  code <<-EOC
+    gem install homesick
+    rbenv rehash
+    homesick clone https://github.com/muratayusuke/dotfiles.git
+    homesick symlink
+  EOC
+end
