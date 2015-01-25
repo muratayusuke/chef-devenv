@@ -91,18 +91,3 @@ end
   include_recipe cookbook
 end
 
-bash 'homesick' do
-  user node['dev_user']['id']
-  cwd "/home/#{node['dev_user']['id']}"
-  code <<-EOC
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-    rbenv global 2.1.2
-    rbenv rehash
-
-    gem install homesick
-    rbenv rehash
-    homesick clone https://github.com/muratayusuke/dotfiles.git
-    homesick symlink
-  EOC
-end
